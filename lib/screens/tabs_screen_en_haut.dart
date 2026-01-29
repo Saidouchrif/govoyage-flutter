@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_guide_flutter/screens/Categorie_screens.dart';
@@ -41,3 +42,4 @@ class TabsScreen extends StatelessWidget {
     );
   }
 }
+*/

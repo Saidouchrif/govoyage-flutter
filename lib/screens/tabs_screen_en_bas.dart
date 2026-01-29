@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:travel_guide_flutter/models/trip.dart';
 import 'package:travel_guide_flutter/screens/Categorie_screens.dart';
 import 'package:travel_guide_flutter/screens/Favorite_Screen.dart';
+import 'package:travel_guide_flutter/widgets/app_drawer.dart';
 
 class TabsScreenEnBas extends StatefulWidget {
-  const TabsScreenEnBas({super.key});
+  final List<Trip> favoriteTripe;
+
+  TabsScreenEnBas(this.favoriteTripe);
 
   @override
   State<TabsScreenEnBas> createState() => _TabsScreenEnBasState();
@@ -18,26 +23,35 @@ class _TabsScreenEnBasState extends State<TabsScreenEnBas> {
   }
 
   int _selectedScreensIndex = 0;
-  final List<Map<String,Object>> _screens = [
-    {
-      "Screen":CategorieScreens(),
-      'Title':'Catégories des voyages',
-    },{
-      'Screen':FavoriteScreen(),
-      'Title':'Voyages favoris',
-    },
-  ];
+  late List<Map<String, Object>> _screens;
+  @override
+  void initState() {
+    _screens = [
+      {
+        "Screen": CategorieScreens(),
+        'Title': 'Catégories des voyages',
+      },
+      {
+        'Screen': FavoriteScreen(widget.favoriteTripe),
+        'Title': 'Voyages favoris',
+      },
+    ];
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text(
           _screens[_selectedScreensIndex]['Title'] as String,
           style: TextStyle(color: Colors.white),
         ),
       ),
+      drawer: AppDrawer(),
       body: _screens[_selectedScreensIndex]['Screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedScreensIndex,
