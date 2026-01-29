@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_guide_flutter/screens/Categorie_screens.dart';
 import 'package:travel_guide_flutter/screens/categorie_trip_screens.dart';
+import 'package:travel_guide_flutter/screens/tabs_screen_en_bas.dart';
+import 'package:travel_guide_flutter/screens/trip_detail_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light().textTheme.copyWith()),
         initialRoute: '/',
       routes: {
-        '/': (ctx)=> CategorieScreens(),
+        '/': (ctx)=> TabsScreenEnBas(),
         CategorieTripScreens.screenRoute: (ctx)=>CategorieTripScreens(),
+        TripDetailScreen.screenRoute:(ctx)=>TripDetailScreen(),
       },
     );
   }

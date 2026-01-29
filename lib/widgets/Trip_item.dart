@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_guide_flutter/models/trip.dart';
+import 'package:travel_guide_flutter/screens/trip_detail_screen.dart';
 
 class TripItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -11,6 +13,7 @@ class TripItem extends StatelessWidget {
 
   const TripItem(
       {required this.duration,
+      required this.id,
       required this.imageUrl,
       required this.season,
       required this.title,
@@ -46,11 +49,15 @@ class TripItem extends StatelessWidget {
     }
   }
 
-  void selectTrip() {}
+  void selectTrip(BuildContext context) {
+    Navigator.of(context).pushNamed(TripDetailScreen.screenRoute,
+    arguments:id 
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectTrip,
+      onTap: ()=>selectTrip(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 7,

@@ -7,18 +7,7 @@ class CategorieScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Guide touristique',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 22,
-        ),
-        ),
-        backgroundColor: Colors.blue,
-      ),
-      body: GridView(
+    return GridView(
         padding: const EdgeInsets.all(10),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
@@ -27,7 +16,6 @@ class CategorieScreens extends StatelessWidget {
           mainAxisSpacing: 10
         ),
         children:Categories_data.map((c)=>CategorieItem(c.imageUrl, c.title,c.id)).toList(),
-      ),
-    );
+      );
   }
 }
