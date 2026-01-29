@@ -28,7 +28,7 @@ d’ajouter des voyages aux favoris et de filtrer selon leurs préférences.
 ## 📦 Télécharger l’application (APK)
 
 👉 **Lien de téléchargement :**  
-🔗 **[Télécharger GoVoyage APK](https://drive.google.com/file/d/1WEu3glcYjEqRWU80CbPSUdRgC8pyU5LN/view?usp=sharing)**
+🔗 **[Télécharger GoVoyage APK](https://drive.google.com/file/d/1EgPAIJ58EbPCDaCKGbenJ3uhjQt93N0a/view?usp=sharing)**
 
 ### 📲 Instructions d’installation
 1. Télécharger le fichier **APK** depuis le lien ci-dessus  
